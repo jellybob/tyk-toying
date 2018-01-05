@@ -1,0 +1,16 @@
+app:
+  image: tykio/tyk-gateway
+  ports:
+    - "8080:8080"
+  environment:
+    TYKLANG: "-python"
+  volumes:
+    - ./tyk.conf:/opt/tyk-gateway/tyk.conf
+    - ./policies.json:/opt/tyk-gateway/policies/policies.json
+    - ./apps:/opt/tyk-gateway/apps
+    - ./middleware:/opt/tyk-gateway/middleware
+  links:
+    - redis
+
+redis:
+  image: redis

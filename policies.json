@@ -1,0 +1,19 @@
+{
+  "admins": {
+    "access_rights": {
+      "example": {
+        "allowed_urls": [],
+        "api_id": "example",
+        "api_name": "Test API",
+        "versions": [
+          "Default"
+        ]
+      }
+    },
+    "active": true,
+    "name": "Admins",
+    "rate": 100,
+    "per": 1,
+    "tags": ["Admin Users"]
+  }
+}
