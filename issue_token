@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+curl -X POST \
+       http://localhost:8080/tyk/keys/create \
+       -H 'cache-control: no-cache' \
+       -H 'content-type: application/json' \
+       -H 'postman-token: 33f4f9fe-90b6-6fce-7625-868b6c50ea7d' \
+       -H 'x-tyk-authorization: abc123' \
+       -d '{
+         "rate": 1000,
+           "per": 1,
+           "expires": -1,
+           "quota_max": -1,
+           "org_id": "neos",
+           "access_rights": {
+             "example": {
+               "api_id": "example",
+               "api_name": "Test API",
+               "versions": ["Default"]
+             }
+           },
+           "meta_data": {
+             "roles": ["admin","customer"],
+             "scopes": ["homes.read", "homes.write"],
+             "name": "Jon Wood",
+             "email": "jon@blankpad.net"
+           }
+       }'
