@@ -9,6 +9,7 @@ app:
     - ./policies.json:/opt/tyk-gateway/policies/policies.json
     - ./apps:/opt/tyk-gateway/apps
     - ./middleware:/opt/tyk-gateway/middleware
+    - ./js:/opt/tyk-gateway/js
   links:
     - redis
 

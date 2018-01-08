@@ -22,7 +22,8 @@
           }]
         },
         "global_headers": {
-          "x-user-email": "$tyk_meta.email"
+          "X-User-Email": "$tyk_meta.email",
+          "Tyk-Content-Request-ID": "$tyk_context.request_id"
         }
       }
     }
@@ -39,5 +40,14 @@
     "enable_upstream_cache_control": true,
     "cache_response_codes": [200]
   },
-  "active": true
+  "active": true,
+  "custom_middleware": {
+    "post": [
+      {
+        "name": "request_id",
+        "path": "middleware/request_id.js",
+        "require_session": false
+      }
+    ]
+  }
 }
