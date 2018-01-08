@@ -22,8 +22,7 @@
           }]
         },
         "global_headers": {
-          "X-User-Email": "$tyk_meta.email",
-          "Tyk-Content-Request-ID": "$tyk_context.request_id"
+          "X-Request-Identifier": "$tyk_context.request_id"
         }
       }
     }
